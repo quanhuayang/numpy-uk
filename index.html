@@ -54,9 +54,56 @@
     }
 
     .word:active { transform: scale(0.98); }
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(0.9rem, 3vw, 1.6rem);
+    }
+
+    .contact {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(6px);
+      color: #ffffff;
+      text-decoration: none;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .contact:hover,
+    .contact:focus-visible {
+      background: rgba(255, 255, 255, 0.24);
+      transform: scale(1.04);
+      outline: none;
+    }
+
+    .contact-hint {
+      font-size: clamp(0.7rem, 1.6vw, 0.85rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .contact-email {
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
-  <a class="word" href="https://numpy.org/" aria-label="Go to numpy.org">numpy</a>
+  <div class="stack">
+    <a class="word" href="https://numpy.org/" aria-label="Go to numpy.org">numpy</a>
+    <a class="contact" href="mailto:ceo@numpy.uk" aria-label="Email ceo@numpy.uk">
+      <span class="contact-hint">Reach me by email</span>
+      <span class="contact-email">ceo@numpy.uk</span>
+    </a>
+  </div>
 </body>
 </html>
